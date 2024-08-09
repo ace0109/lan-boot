@@ -1,0 +1,7 @@
+# database config
+spring.datasource.url=jdbc:mysql://localhost:3306/ace?useSSL=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=root
+
+# MyBatis Config
+logging.level.com.baomidou.mybatisplus=debug
