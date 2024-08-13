@@ -4,7 +4,7 @@ import com.marvel.lan.domain.user.entity.ChinaArea;
 
 import java.util.List;
 
-public interface ChinaAreaService {
+public interface ChinaAreaDomainService {
 
     /**
      * 获取所有省市区数据
