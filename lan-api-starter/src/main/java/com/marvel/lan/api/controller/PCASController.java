@@ -1,7 +1,7 @@
 package com.marvel.lan.api.controller;
 
 import com.marvel.lan.application.PCASService;
-import com.marvel.lan.domain.user.entity.ChinaArea;
+import com.marvel.lan.domain.user.entity.ChinaAreaDO;
 import com.marvel.lan.types.common.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * @folder 省市区管理
+ */
 @RestController
 @RequestMapping("/pcas")
 public class PCASController {
@@ -20,20 +23,32 @@ public class PCASController {
         this.pcasService = pcasService;
     }
 
+    /**
+     * @api.name 查询所有省市区数据
+     * @developing
+     */
     @GetMapping("/all")
-    public Result<List<ChinaArea>> getAllChinaAreas()
+    public Result<List<ChinaAreaDO>> getAllChinaAreas()
     {
         return pcasService.getAllAreas();
     }
 
+    /**
+     * @api.name 查询所有省份
+     * @developing
+     */
     @GetMapping("/areas")
-    public Result<List<ChinaArea>> getProvincesList()
+    public Result<List<ChinaAreaDO>> getProvincesList()
     {
         return pcasService.getProvincesList();
     }
 
+    /**
+     * @api.name 根据code查询省市区
+     * @developing
+     */
     @GetMapping("/areas/{code}")
-    public Result<List<ChinaArea>> getAreasByCode(@PathVariable String code)
+    public Result<List<ChinaAreaDO>> getAreasByCode(@PathVariable String code)
     {
         return pcasService.getAreasListByCode(code);
     }

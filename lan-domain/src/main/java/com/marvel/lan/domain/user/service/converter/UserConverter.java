@@ -1,7 +1,7 @@
 package com.marvel.lan.domain.user.service.converter;
 
-import com.marvel.lan.domain.user.entity.User;
-import com.marvel.lan.infrastructure.persistence.DO.UserDO;
+import com.marvel.lan.domain.user.entity.UserDO;
+import com.marvel.lan.infrastructure.persistence.po.UserPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -11,11 +11,11 @@ import java.util.List;
 public interface UserConverter {
     UserConverter INSTANCE = Mappers.getMapper(UserConverter.class);
 
-    User toEntity(UserDO dto);
+    UserDO toDO(UserPO dto);
 
-    UserDO toDO(User entity);
+    UserPO toPO(UserDO entity);
 
-    List<User> toEntityList(List<UserDO> dtoList);
+    List<UserDO> toDOList(List<UserPO> dtoList);
 
-    List<UserDO> toDOList(List<User> entityList);
+    List<UserPO> toPOList(List<UserDO> entityList);
 }

@@ -1,9 +1,9 @@
 package com.marvel.lan.domain.user.service.impl;
 
-import com.marvel.lan.domain.user.entity.User;
+import com.marvel.lan.domain.user.entity.UserDO;
 import com.marvel.lan.domain.user.service.UserDomainService;
 import com.marvel.lan.domain.user.service.converter.UserConverter;
-import com.marvel.lan.infrastructure.persistence.DO.UserDO;
+import com.marvel.lan.infrastructure.persistence.po.UserPO;
 import com.marvel.lan.infrastructure.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +20,11 @@ public class UserDomainServiceImpl implements UserDomainService {
         this.userRepository = userRepository;
     }
 
-    public List<User> getUserList() {
-        List<UserDO> userDOList = userRepository.list();
+    public List<UserDO> getUserList() {
+        List<UserPO> userPOList = userRepository.list();
 
         UserConverter converter = UserConverter.INSTANCE;
 
-        return converter.toEntityList(userDOList);
+        return converter.toDOList(userPOList);
     }
 }

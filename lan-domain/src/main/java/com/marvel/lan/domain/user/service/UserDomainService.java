@@ -1,9 +1,9 @@
 package com.marvel.lan.domain.user.service;
 
-import com.marvel.lan.domain.user.entity.User;
+import com.marvel.lan.domain.user.entity.UserDO;
 
 import java.util.List;
 
 public interface UserDomainService {
-    List<User> getUserList();
+    List<UserDO> getUserList();
 }

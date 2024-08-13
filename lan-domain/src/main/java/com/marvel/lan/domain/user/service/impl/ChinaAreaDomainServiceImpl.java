@@ -1,10 +1,10 @@
 package com.marvel.lan.domain.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.marvel.lan.domain.user.entity.ChinaArea;
+import com.marvel.lan.domain.user.entity.ChinaAreaDO;
 import com.marvel.lan.domain.user.service.ChinaAreaDomainService;
 import com.marvel.lan.domain.user.service.converter.ChinaAreaConverter;
-import com.marvel.lan.infrastructure.persistence.DO.ChinaAreaDO;
+import com.marvel.lan.infrastructure.persistence.po.ChinaAreaPO;
 import com.marvel.lan.infrastructure.persistence.repository.ChinaAreaRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,24 +19,24 @@ public class ChinaAreaDomainServiceImpl implements ChinaAreaDomainService {
         this.chinaAreaRepository = chinaAreaRepository;
     }
 
-    private List<ChinaArea> getChinaAreas(QueryWrapper<ChinaAreaDO> queryWrapper) {
-        List<ChinaAreaDO> chinaAreaDOList = chinaAreaRepository.list(queryWrapper);
+    private List<ChinaAreaDO> getChinaAreas(QueryWrapper<ChinaAreaPO> queryWrapper) {
+        List<ChinaAreaPO> chinaAreaPOList = chinaAreaRepository.list(queryWrapper);
 
         ChinaAreaConverter converter = ChinaAreaConverter.INSTANCE;
 
-        return converter.toEntityList(chinaAreaDOList);
+        return converter.toDOList(chinaAreaPOList);
     }
 
 
     @Override
-    public List<ChinaArea> getAllAreas() {
-        QueryWrapper<ChinaAreaDO> queryWrapper = new QueryWrapper<>();
+    public List<ChinaAreaDO> getAllAreas() {
+        QueryWrapper<ChinaAreaPO> queryWrapper = new QueryWrapper<>();
         return getChinaAreas(queryWrapper);
     }
 
     @Override
-    public List<ChinaArea> getProvincesList() {
-        QueryWrapper<ChinaAreaDO> queryWrapper = new QueryWrapper<>();
+    public List<ChinaAreaDO> getProvincesList() {
+        QueryWrapper<ChinaAreaPO> queryWrapper = new QueryWrapper<>();
         queryWrapper.isNull("parent_code");
         return getChinaAreas(queryWrapper);
     }
@@ -44,8 +44,8 @@ public class ChinaAreaDomainServiceImpl implements ChinaAreaDomainService {
 
 
     @Override
-    public List<ChinaArea> getAreasListByCode(String code) {
-        QueryWrapper<ChinaAreaDO> queryWrapper = new QueryWrapper<>();
+    public List<ChinaAreaDO> getAreasListByCode(String code) {
+        QueryWrapper<ChinaAreaPO> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("parent_code", code);
         return getChinaAreas(queryWrapper);
     }

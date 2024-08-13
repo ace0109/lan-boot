@@ -1,7 +1,7 @@
 package com.marvel.lan.application.impl;
 
 import com.marvel.lan.application.PCASService;
-import com.marvel.lan.domain.user.entity.ChinaArea;
+import com.marvel.lan.domain.user.entity.ChinaAreaDO;
 import com.marvel.lan.domain.user.service.ChinaAreaDomainService;
 import com.marvel.lan.types.common.Result;
 import org.springframework.stereotype.Service;
@@ -19,20 +19,20 @@ public class PCASServiceImpl implements PCASService {
 
 
     @Override
-    public Result<List<ChinaArea>> getAllAreas() {
-        List<ChinaArea> chinaAreasList = chinaAreaDomainService.getAllAreas();
-        return Result.success(chinaAreasList);
+    public Result<List<ChinaAreaDO>> getAllAreas() {
+        List<ChinaAreaDO> chinaAreasListDO = chinaAreaDomainService.getAllAreas();
+        return Result.success(chinaAreasListDO);
     }
 
     @Override
-    public Result<List<ChinaArea>> getProvincesList() {
-        List<ChinaArea> chinaAreasList = chinaAreaDomainService.getProvincesList();
-        return Result.success(chinaAreasList);
+    public Result<List<ChinaAreaDO>> getProvincesList() {
+        List<ChinaAreaDO> chinaAreasListDO = chinaAreaDomainService.getProvincesList();
+        return Result.success(chinaAreasListDO);
     }
 
     @Override
-    public Result<List<ChinaArea>> getAreasListByCode(String code) {
-        List<ChinaArea> chinaAreasList = chinaAreaDomainService.getAreasListByCode(code);
-        return Result.success(chinaAreasList);
+    public Result<List<ChinaAreaDO>> getAreasListByCode(String code) {
+        List<ChinaAreaDO> chinaAreasListDO = chinaAreaDomainService.getAreasListByCode(code);
+        return Result.success(chinaAreasListDO);
     }
 }

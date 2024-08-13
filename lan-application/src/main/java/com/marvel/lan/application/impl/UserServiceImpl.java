@@ -1,7 +1,7 @@
 package com.marvel.lan.application.impl;
 
 import com.marvel.lan.application.UserService;
-import com.marvel.lan.domain.user.entity.User;
+import com.marvel.lan.domain.user.entity.UserDO;
 import com.marvel.lan.domain.user.service.UserDomainService;
 import com.marvel.lan.types.common.Result;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class UserServiceImpl implements UserService {
         this.userDomainService = userDomainService;
     }
 
-    public Result<List<User>> getUserList() {
-        List<User> userList = userDomainService.getUserList();
-        return Result.success(userList);
+    public Result<List<UserDO>> getUserList() {
+        List<UserDO> userDOList = userDomainService.getUserList();
+        return Result.success(userDOList);
     }
 }

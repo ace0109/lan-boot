@@ -1,6 +1,6 @@
 package com.marvel.lan.domain.user.service;
 
-import com.marvel.lan.domain.user.entity.ChinaArea;
+import com.marvel.lan.domain.user.entity.ChinaAreaDO;
 
 import java.util.List;
 
@@ -10,17 +10,17 @@ public interface ChinaAreaDomainService {
      * 获取所有省市区数据
      * @return List<ChinaArea>
      */
-    List<ChinaArea> getAllAreas();
+    List<ChinaAreaDO> getAllAreas();
 
     /**
      * 获取所有省份
      * @return List<ChinaArea>
      */
-    List<ChinaArea> getProvincesList();
+    List<ChinaAreaDO> getProvincesList();
 
     /**
      * 某个地区下的所有地区
      * @return List<ChinaArea>
      */
-    List<ChinaArea> getAreasListByCode(String code);
+    List<ChinaAreaDO> getAreasListByCode(String code);
 }

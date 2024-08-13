@@ -1,17 +1,15 @@
-package com.marvel.lan.infrastructure.persistence.DO;
+package com.marvel.lan.infrastructure.persistence.po;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import jakarta.persistence.Id;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
 @TableName("users")
-public class UserDO {
+public class UserPO {
 
-    @Id
     @TableId
     private Long id;
     private String username;

@@ -3,7 +3,7 @@ package com.marvel.lan.domain.user.entity;
 import lombok.Data;
 
 @Data
-public class ChinaArea {
+public class ChinaAreaDO {
 
     private Long id;
     private String name;
