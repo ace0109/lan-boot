@@ -7,7 +7,7 @@ import java.util.Date;
 @Data
 public class UserDO {
 
-    private Long id;
+    private String id;
     private String username;
     private String password;
     private String email;

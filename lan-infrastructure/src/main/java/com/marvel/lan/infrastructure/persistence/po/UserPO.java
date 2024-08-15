@@ -11,7 +11,7 @@ import java.util.Date;
 public class UserPO {
 
     @TableId
-    private Long id;
+    private String id;
     private String username;
     private String password;
     private String email;
