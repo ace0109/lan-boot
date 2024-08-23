@@ -1,6 +1,6 @@
-package com.marvel.lan.domain.user.service.converter;
+package com.marvel.lan.domain.service.converter;
 
-import com.marvel.lan.domain.user.entity.UserDO;
+import com.marvel.lan.domain.entity.UserDO;
 import com.marvel.lan.infrastructure.persistence.po.UserPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

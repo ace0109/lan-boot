@@ -1,9 +1,9 @@
-package com.marvel.lan.domain.user.service.impl;
+package com.marvel.lan.domain.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.marvel.lan.domain.user.entity.ChinaAreaDO;
-import com.marvel.lan.domain.user.service.ChinaAreaDomainService;
-import com.marvel.lan.domain.user.service.converter.ChinaAreaConverter;
+import com.marvel.lan.domain.entity.ChinaAreaDO;
+import com.marvel.lan.domain.service.ChinaAreaDomainService;
+import com.marvel.lan.domain.service.converter.ChinaAreaConverter;
 import com.marvel.lan.infrastructure.persistence.po.ChinaAreaPO;
 import com.marvel.lan.infrastructure.persistence.repository.ChinaAreaRepository;
 import org.springframework.stereotype.Service;

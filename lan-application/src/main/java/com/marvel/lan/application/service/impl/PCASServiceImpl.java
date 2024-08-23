@@ -1,8 +1,8 @@
 package com.marvel.lan.application.service.impl;
 
 import com.marvel.lan.application.service.PCASService;
-import com.marvel.lan.domain.user.entity.ChinaAreaDO;
-import com.marvel.lan.domain.user.service.ChinaAreaDomainService;
+import com.marvel.lan.domain.entity.ChinaAreaDO;
+import com.marvel.lan.domain.service.ChinaAreaDomainService;
 import com.marvel.lan.types.common.Result;
 import org.springframework.stereotype.Service;
 

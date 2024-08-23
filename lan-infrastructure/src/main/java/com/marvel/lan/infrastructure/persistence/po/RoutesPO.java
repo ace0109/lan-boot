@@ -1,16 +1,16 @@
 package com.marvel.lan.infrastructure.persistence.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Data
 @TableName("routes")
 public class RoutesPO {
 
     @TableId(type = IdType.ASSIGN_ID)
-    private Long id;
+    private String id;
     private String path;
     private String name;
     private String component;
@@ -25,5 +25,15 @@ public class RoutesPO {
     private String metaFrameSrc;
     private Integer metaFrameBlank;
     private Integer metaKeepAlive;
+
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createdAt;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updatedAt;
+
+    @TableLogic(value = "null", delval = "now()")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime deletedAt;
 
 }

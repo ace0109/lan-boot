@@ -1,7 +1,6 @@
-package com.marvel.lan.domain.user.service;
+package com.marvel.lan.domain.service;
 
-import com.marvel.lan.domain.user.entity.UserDO;
-import com.marvel.lan.types.common.Result;
+import com.marvel.lan.domain.entity.UserDO;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.marvel.lan.domain.user.service;
+package com.marvel.lan.domain.service;
 
-import com.marvel.lan.domain.user.entity.ChinaAreaDO;
+import com.marvel.lan.domain.entity.ChinaAreaDO;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.marvel.lan.application.service;
 
-import com.marvel.lan.domain.user.entity.ChinaAreaDO;
+import com.marvel.lan.domain.entity.ChinaAreaDO;
 import com.marvel.lan.types.common.Result;
 
 import java.util.List;

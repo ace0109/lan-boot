@@ -1,8 +1,8 @@
-package com.marvel.lan.domain.user.service.impl;
+package com.marvel.lan.domain.service.impl;
 
-import com.marvel.lan.domain.user.entity.UserDO;
-import com.marvel.lan.domain.user.service.UserDomainService;
-import com.marvel.lan.domain.user.service.converter.UserConverter;
+import com.marvel.lan.domain.entity.UserDO;
+import com.marvel.lan.domain.service.UserDomainService;
+import com.marvel.lan.domain.service.converter.UserConverter;
 import com.marvel.lan.infrastructure.persistence.po.UserPO;
 import com.marvel.lan.infrastructure.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

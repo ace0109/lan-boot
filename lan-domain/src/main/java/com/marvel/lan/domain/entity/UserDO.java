@@ -1,4 +1,4 @@
-package com.marvel.lan.domain.user.entity;
+package com.marvel.lan.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

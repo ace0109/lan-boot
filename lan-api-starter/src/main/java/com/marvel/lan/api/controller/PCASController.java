@@ -1,7 +1,7 @@
 package com.marvel.lan.api.controller;
 
 import com.marvel.lan.application.service.PCASService;
-import com.marvel.lan.domain.user.entity.ChinaAreaDO;
+import com.marvel.lan.domain.entity.ChinaAreaDO;
 import com.marvel.lan.types.common.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

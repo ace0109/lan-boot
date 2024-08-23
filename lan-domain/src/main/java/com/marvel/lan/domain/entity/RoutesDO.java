@@ -1,11 +1,11 @@
-package com.marvel.lan.domain.user.entity;
+package com.marvel.lan.domain.entity;
 
 import lombok.Data;
 
 @Data
 public class RoutesDO {
 
-    private Long id;
+    private String id;
     private String path;
     private String name;
     private String component;
