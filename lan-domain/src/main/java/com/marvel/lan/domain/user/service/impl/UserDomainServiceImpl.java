@@ -27,4 +27,19 @@ public class UserDomainServiceImpl implements UserDomainService {
 
         return converter.toDOList(userPOList);
     }
+
+    @Override
+    public UserDO createUser(UserDO userDO) {
+        return UserConverter.INSTANCE.toDO(userRepository.saveAndReturn(UserConverter.INSTANCE.toPO(userDO)));
+    }
+
+    @Override
+    public UserDO getUserById(String userId) {
+        return UserConverter.INSTANCE.toDO(userRepository.getById(userId));
+    }
+
+    @Override
+    public Boolean deleteUserById(String userId) {
+        return userRepository.removeById(userId);
+    }
 }

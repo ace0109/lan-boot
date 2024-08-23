@@ -1,8 +1,14 @@
 package com.marvel.lan.api.controller;
 
-import com.marvel.lan.application.impl.UserServiceImpl;
-import com.marvel.lan.domain.user.entity.UserDO;
+import com.marvel.lan.application.service.impl.UserServiceImpl;
+import com.marvel.lan.application.types.request.UserCreateData;
+import com.marvel.lan.application.types.response.UserInfo;
+import com.marvel.lan.types.common.ErrorCode;
 import com.marvel.lan.types.common.Result;
+import com.marvel.lan.types.exception.BusinessException;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +16,7 @@ import java.util.List;
 /**
  * @folder 用户管理
  */
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -25,7 +32,7 @@ public class UserController {
      * @developing
      */
     @GetMapping("/list")
-    public Result<List<UserDO>> getUserList()
+    public Result<List<UserInfo>, Void> getUserList()
     {
         return userServiceImpl.getUserList();
     }
@@ -35,9 +42,13 @@ public class UserController {
      * @developing
      */
     @PostMapping
-    public Result<UserDO> createUser(@RequestBody UserDO userDO)
+    public Result<UserInfo, Void> createUser(@RequestBody @Valid UserCreateData userCreateData, BindingResult validateResult)
     {
-        return null;
+        if (validateResult.hasErrors()) {
+            log.error("create user error: {}", validateResult.getAllErrors().get(0).getDefaultMessage());
+            throw new BusinessException(ErrorCode.INVALID_USER_INPUT);
+        }
+        return userServiceImpl.createUser(userCreateData);
     }
 
     /**
@@ -45,8 +56,22 @@ public class UserController {
      * @developing
      */
     @GetMapping("/{userId}")
-    public Result<UserDO> createUser(@PathVariable String userId)
+    public Result<UserInfo, Void> getUserById(@PathVariable String userId)
     {
-        return null;
+
+        return userServiceImpl.getUserById(userId);
+
+    }
+
+    /**
+     * @api.name 删除某个用户
+     * @developing
+     */
+    @DeleteMapping("/{userId}")
+    public Result<Boolean, Void> deleteUserById(@PathVariable String userId)
+    {
+
+        return userServiceImpl.deleteUserById(userId);
+
     }
 }

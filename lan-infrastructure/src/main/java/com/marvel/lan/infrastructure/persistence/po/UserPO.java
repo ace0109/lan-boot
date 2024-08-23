@@ -1,22 +1,28 @@
 package com.marvel.lan.infrastructure.persistence.po;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @TableName("users")
 public class UserPO {
 
-    @TableId
+    @TableId(type = IdType.ASSIGN_ID)
     private String id;
     private String username;
     private String password;
     private String email;
-    private Date createdAt;
-    private Date updatedAt;
-    private Date deletedAt;
+
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createdAt;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updatedAt;
+
+    @TableLogic(value = "null", delval = "now()")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime deletedAt;
 
 }

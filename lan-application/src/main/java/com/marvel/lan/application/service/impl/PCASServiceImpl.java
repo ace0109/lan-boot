@@ -1,6 +1,6 @@
-package com.marvel.lan.application.impl;
+package com.marvel.lan.application.service.impl;
 
-import com.marvel.lan.application.PCASService;
+import com.marvel.lan.application.service.PCASService;
 import com.marvel.lan.domain.user.entity.ChinaAreaDO;
 import com.marvel.lan.domain.user.service.ChinaAreaDomainService;
 import com.marvel.lan.types.common.Result;
@@ -19,19 +19,19 @@ public class PCASServiceImpl implements PCASService {
 
 
     @Override
-    public Result<List<ChinaAreaDO>> getAllAreas() {
+    public Result<List<ChinaAreaDO>, Void> getAllAreas() {
         List<ChinaAreaDO> chinaAreasListDO = chinaAreaDomainService.getAllAreas();
         return Result.success(chinaAreasListDO);
     }
 
     @Override
-    public Result<List<ChinaAreaDO>> getProvincesList() {
+    public Result<List<ChinaAreaDO>, Void> getProvincesList() {
         List<ChinaAreaDO> chinaAreasListDO = chinaAreaDomainService.getProvincesList();
         return Result.success(chinaAreasListDO);
     }
 
     @Override
-    public Result<List<ChinaAreaDO>> getAreasListByCode(String code) {
+    public Result<List<ChinaAreaDO>, Void> getAreasListByCode(String code) {
         List<ChinaAreaDO> chinaAreasListDO = chinaAreaDomainService.getAreasListByCode(code);
         return Result.success(chinaAreasListDO);
     }

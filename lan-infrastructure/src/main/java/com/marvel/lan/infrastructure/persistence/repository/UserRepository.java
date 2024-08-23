@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserRepository extends ServiceImpl<UserMapper, UserPO> {
 
+    public UserPO saveAndReturn(UserPO userPO) {
+        save(userPO);
+        return getById(userPO.getId());
+    }
 }

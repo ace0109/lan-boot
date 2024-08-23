@@ -1,6 +1,6 @@
 package com.marvel.lan.api.controller;
 
-import com.marvel.lan.application.PCASService;
+import com.marvel.lan.application.service.PCASService;
 import com.marvel.lan.domain.user.entity.ChinaAreaDO;
 import com.marvel.lan.types.common.Result;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +28,7 @@ public class PCASController {
      * @developing
      */
     @GetMapping("/all")
-    public Result<List<ChinaAreaDO>> getAllChinaAreas()
+    public Result<List<ChinaAreaDO>, Void> getAllChinaAreas()
     {
         return pcasService.getAllAreas();
     }
@@ -38,7 +38,7 @@ public class PCASController {
      * @developing
      */
     @GetMapping("/areas")
-    public Result<List<ChinaAreaDO>> getProvincesList()
+    public Result<List<ChinaAreaDO>, Void> getProvincesList()
     {
         return pcasService.getProvincesList();
     }
@@ -48,7 +48,7 @@ public class PCASController {
      * @developing
      */
     @GetMapping("/areas/{code}")
-    public Result<List<ChinaAreaDO>> getAreasByCode(@PathVariable String code)
+    public Result<List<ChinaAreaDO>, Void> getAreasByCode(@PathVariable String code)
     {
         return pcasService.getAreasListByCode(code);
     }
