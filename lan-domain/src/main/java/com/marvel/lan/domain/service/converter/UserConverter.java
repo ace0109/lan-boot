@@ -11,11 +11,11 @@ import java.util.List;
 public interface UserConverter {
     UserConverter INSTANCE = Mappers.getMapper(UserConverter.class);
 
-    UserDO toDO(UserPO dto);
+    UserDO toDO(UserPO userPO);
 
-    UserPO toPO(UserDO entity);
+    UserPO toPO(UserDO userDO);
 
-    List<UserDO> toDOList(List<UserPO> dtoList);
+    List<UserDO> toDOList(List<UserPO> userPOList);
 
-    List<UserPO> toPOList(List<UserDO> entityList);
+    List<UserPO> toPOList(List<UserDO> userDOList);
 }

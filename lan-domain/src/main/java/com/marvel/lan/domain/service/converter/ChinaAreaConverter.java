@@ -12,11 +12,11 @@ public interface ChinaAreaConverter {
     ChinaAreaConverter INSTANCE = Mappers.getMapper(ChinaAreaConverter.class);
 
     // @Mapping(source = "name1", target = "name2") 若转换的实体之间存在字段不一致，可以添加@Mapping
-    ChinaAreaPO toPO(ChinaAreaDO entity);
+    ChinaAreaPO toPO(ChinaAreaDO chinaAreaDO);
     // @Mapping(source = "name2", target = "name1") 若转换的实体之间存在字段不一致，可以添加@Mapping
-    ChinaAreaDO toDO(ChinaAreaPO dto);
+    ChinaAreaDO toDO(ChinaAreaPO chinaAreaPO);
 
-    List<ChinaAreaPO> toPOList(List<ChinaAreaDO> entityList);
+    List<ChinaAreaPO> toPOList(List<ChinaAreaDO> chinaAreaDOList);
 
-    List<ChinaAreaDO> toDOList(List<ChinaAreaPO> dtoList);
+    List<ChinaAreaDO> toDOList(List<ChinaAreaPO> chinaAreaPOList);
 }

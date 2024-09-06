@@ -1,11 +1,11 @@
-package com.marvel.lan.domain.entity;
+package com.marvel.lan.application.types.request;
 
 import lombok.Data;
 
 @Data
-public class RoutesDO {
+public class RouterCreateData {
 
-    private String id;
+    private String parentId;
     private String path;
     private String name;
     private String component;

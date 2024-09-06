@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("users")
+@TableName("user")
 public class UserPO {
 
     @TableId(type = IdType.ASSIGN_ID)

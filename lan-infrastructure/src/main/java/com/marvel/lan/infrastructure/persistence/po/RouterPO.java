@@ -7,10 +7,11 @@ import java.time.LocalDateTime;
 
 @Data
 @TableName("routes")
-public class RoutesPO {
+public class RouterPO {
 
     @TableId(type = IdType.ASSIGN_ID)
     private String id;
+    private String parentId;
     private String path;
     private String name;
     private String component;
